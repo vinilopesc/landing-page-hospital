@@ -3,69 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Hospital e Maternidade Nossa Senhora Aparecida</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Yeseva+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Yeseva+One&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="assets/logotipo-Photoroom.png">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="header">
+    <!-- HEADER -->
+    <header class="header" id="header">
         <div class="container">
-            <a href="#"><img src="assets/logo.png" alt="Logo Hospital" class="logo"></a>
-            <nav class="nav">
+            <a href="#"><img src="assets/logo.svg" alt="Logo Hospital" class="logo"></a>
+            <nav class="nav" id="nav">
                 <a href="#sobre">Sobre Nós</a>
+                <a href="#galeria">Galeria</a>
                 <a href="#servicos">Serviços</a>
-                <a href="#contato">Contato</a>
+                <a href="#contato" class="btn-nav">Fale Conosco</a>
             </nav>
-            <button class="hamburger" id="hamburger-menu">
-                <i class="fas fa-bars"></i>
+            <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
         </div>
     </header>
+    <div class="nav-overlay" id="nav-overlay"></div>
 
+    <!-- HERO -->
     <section id="hero" class="hero">
         <div class="hero-content">
-            <h1>O cuidado que sua família merece,<br> no momento em que mais importa</h1>
+            <div class="hero-tag">
+                <i class="fas fa-map-marker-alt"></i> Brasília de Minas — MG
+            </div>
+            <h1>O <span class="hero-hl">cuidado</span> que sua <span class="hero-hl">família</span> merece,<br> no momento em que mais importa</h1>
             <p>Maternidade com pediatra em sala e apartamentos individualizados. Ortopedia de alta performance. Porque saúde exige mais do que atenção — exige excelência.</p>
-            <a href="#contato" class="btn">Fale Conosco</a>
+            <div class="hero-btns">
+                <a href="#contato" class="btn btn-primary">Fale Conosco</a>
+                <a href="#servicos" class="btn btn-outline">Serviços</a>
+            </div>
+        </div>
+        <div class="scroll-cue" aria-hidden="true">
+            <i class="fas fa-chevron-down"></i>
         </div>
     </section>
 
+    <!-- RIBBON -->
     <section class="ribbon" aria-label="Destaque">
         <div class="ribbon-track">
-            <span>Hospital com maior quantidade de especialidades da região - Aqui você não é apenas atendido, você é esperado.</span>
-            <span>Hospital com maior quantidade de especialidades da região - Aqui você não é apenas atendido, você é esperado.</span>
+            <span><i class="fas fa-star"></i> Hospital com maior quantidade de especialidades da região &nbsp;&bull;&nbsp; Aqui você não é apenas atendido, você é esperado.</span>
+            <span><i class="fas fa-heart"></i> Hospital com maior quantidade de especialidades da região &nbsp;&bull;&nbsp; Aqui você não é apenas atendido, você é esperado.</span>
+            <span><i class="fas fa-star"></i> Hospital com maior quantidade de especialidades da região &nbsp;&bull;&nbsp; Aqui você não é apenas atendido, você é esperado.</span>
+            <span><i class="fas fa-heart"></i> Hospital com maior quantidade de especialidades da região &nbsp;&bull;&nbsp; Aqui você não é apenas atendido, você é esperado.</span>
         </div>
     </section>
 
     <main>
+
+        <!-- SOBRE -->
         <section id="sobre" class="sobre">
             <div class="container">
-                <h2>Nossa Missão é Cuidar de Você</h2>
-                <p class="section-description">
-                    O Hospital e Maternidade Nossa Senhora Aparecida tem o compromisso de oferecer um atendimento médico-hospitalar de alta qualidade, com segurança, humanização e foco no bem-estar de nossos pacientes e suas famílias.
-                </p>
+                <h2 class="reveal">Nossa Missão é Cuidar de Você</h2>
                 <div class="cards-container">
-                    <div class="card">
-                        <i class="fas fa-heartbeat"></i>
+                    <div class="card reveal delay-1">
+                        <div class="card-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
                         <h3>Missão</h3>
                         <p>Promover a saúde e o bem-estar com atendimento de excelência.</p>
                     </div>
-                    <div class="card">
-                        <i class="fas fa-user-md"></i>
+                    <div class="card reveal delay-2">
+                        <div class="card-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
                         <h3>Visão</h3>
                         <p>Ser referência em assistência à saúde na região de Brasília de Minas.</p>
                     </div>
-                    <div class="card">
-                        <i class="fas fa-stethoscope"></i>
+                    <div class="card reveal delay-3">
+                        <div class="card-icon">
+                            <i class="fas fa-stethoscope"></i>
+                        </div>
                         <h3>Valores</h3>
                         <p>Ética, humanização, respeito, qualidade e segurança do paciente.</p>
                     </div>
@@ -73,56 +93,103 @@
             </div>
         </section>
 
-        <section id="galeria" class="galeria">
+        <!-- STATS BAR -->
+        <section class="stats-bar">
             <div class="container">
-                <h2>Nosso Serviços</h2>
-                <p class="section-description">
-                    Conheça um pouco sobre nossos profissionais e serviços prestados.
-                </p>
-                <div class="galeria-grid">
-                    <div class="galeria-item">
-                        <img src="assets/images/WhatsApp Image 2025-07-23 at 16.53.14 (2).jpeg" alt="Foto de um medico medindo os sinais vitais de um recem nascido">
+                <div class="stats-grid">
+                    <div class="stat-item reveal">
+                        <div class="stat-number">+20</div>
+                        <div class="stat-label">Anos de história</div>
                     </div>
-                    <div class="galeria-item">
-                        <img src="assets/images/WhatsApp Image 2025-07-03 at 19.51.51 (1).jpeg" alt="Foto de uma criança beijando a barriga da mãe">
+                    <div class="stat-item reveal delay-1">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Especialidades</div>
                     </div>
-                    <div class="galeria-item">
-                        <img src="assets/images/Parto 2109 Allice (7).jpeg" alt="Foto do pezinho do bebê">
+                    <div class="stat-item reveal delay-2">
+                        <div class="stat-number">24h</div>
+                        <div class="stat-label">Pronto Atendimento</div>
                     </div>
-                    <div class="galeria-item">
-                        <img src="assets/images/Parto 1109 Lara (21).jpeg" alt="Foto do pai e da mãe com o recem nascido">
-                    </div>
-                    <div class="galeria-item">
-                        <img src="assets/images/WhatsApp Image 2025-07-23 at 16.53.15.jpeg" alt="Foto de um recem nascido com roupa marrom">
-                    </div>
-                    <div class="galeria-item">
-                        <img src="assets/images/WhatsApp Image 2025-07-03 at 19.51.56 (2).jpeg" alt="Foto do medico segurando um recem nascido">
+                    <div class="stat-item reveal delay-3">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Dedicação</div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- GALERIA -->
+        <section id="galeria" class="galeria">
+            <div class="galeria-header container">
+                <h2 class="reveal">Nossa Galeria</h2>
+            </div>
+            <div class="gal-hero">
+                <div class="gi">
+                    <img src="assets/images/WhatsApp Image 2025-07-23 at 16.53.14 (2).jpeg" alt="Médico medindo os sinais vitais de um recém-nascido" loading="lazy">
+                    <div class="gi-overlay"><i class="fas fa-expand-alt"></i></div>
+                </div>
+                <div class="gal-stack">
+                    <div class="gi">
+                        <img src="assets/images/WhatsApp Image 2025-07-03 at 19.51.51 (1).jpeg" alt="Criança beijando a barriga da mãe" loading="lazy">
+                        <div class="gi-overlay"><i class="fas fa-expand-alt"></i></div>
+                    </div>
+                    <div class="gi">
+                        <img src="assets/images/Parto 2109 Allice (7).jpeg" alt="Pezinho do bebê" loading="lazy">
+                        <div class="gi-overlay"><i class="fas fa-expand-alt"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="gal-strip">
+                <div class="gi">
+                    <img src="assets/images/Parto 1109 Lara (21).jpeg" alt="Pai e mãe com o recém-nascido" loading="lazy">
+                    <div class="gi-overlay"><i class="fas fa-expand-alt"></i></div>
+                </div>
+                <div class="gi">
+                    <img src="assets/images/WhatsApp Image 2025-07-23 at 16.53.15.jpeg" alt="Recém-nascido com roupa marrom" loading="lazy">
+                    <div class="gi-overlay"><i class="fas fa-expand-alt"></i></div>
+                </div>
+                <div class="gi">
+                    <img src="assets/images/WhatsApp Image 2025-07-03 at 19.51.56 (2).jpeg" alt="Médico segurando um recém-nascido" loading="lazy">
+                    <div class="gi-overlay"><i class="fas fa-expand-alt"></i></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LIGHTBOX -->
+        <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualizar imagem">
+            <button class="lightbox-close" id="lightbox-close" aria-label="Fechar">&#x00D7;</button>
+            <img id="lightbox-img" src="" alt="">
+        </div>
+
+        <!-- SERVIÇOS -->
         <section id="servicos" class="servicos">
             <div class="container">
-                <h2>Nossos Serviços</h2>
+                <h2 class="reveal">Nossos Serviços</h2>
                 <div class="servicos-grid">
-                    <div class="servico-item">
-                        <i class="fas fa-baby"></i>
+                    <div class="servico-item reveal delay-1">
+                        <div class="servico-icon">
+                            <i class="fas fa-baby"></i>
+                        </div>
                         <h3>Maternidade</h3>
                         <p>Acompanhamento completo, do pré-natal ao pós-parto, com estrutura segura e acolhedora.</p>
                     </div>
-                    <div class="servico-item">
-                        <i class="fas fa-procedures"></i>
+                    <div class="servico-item reveal delay-2">
+                        <div class="servico-icon">
+                            <i class="fas fa-procedures"></i>
+                        </div>
                         <h3>Centro Cirúrgico</h3>
                         <p>Equipado para realizar procedimentos de diversas complexidades com total segurança.</p>
                     </div>
-                    <div class="servico-item">
-                        <i class="fas fa-ambulance"></i>
+                    <div class="servico-item reveal delay-3">
+                        <div class="servico-icon">
+                            <i class="fas fa-ambulance"></i>
+                        </div>
                         <h3>Pronto Atendimento</h3>
                         <p>Atendimento de urgência e emergência 24 horas por dia, com equipe qualificada.</p>
                     </div>
-                    <div class="servico-item">
-                        <i class="fas fa-user-nurse"></i>
+                    <div class="servico-item reveal delay-1">
+                        <div class="servico-icon">
+                            <i class="fas fa-user-nurse"></i>
+                        </div>
                         <h3>Consultas e Exames</h3>
                         <p>Oferecemos diversas especialidades médicas e exames para um diagnóstico preciso.</p>
                     </div>
@@ -130,48 +197,96 @@
             </div>
         </section>
 
+        <!-- CONTATO -->
         <section id="contato" class="contato">
             <div class="container">
-                <h2>Entre em Contato</h2>
+                <h2 class="reveal">Entre em Contato</h2>
                 <div class="contato-wrapper">
-                    <div class="contato-info">
+                    <div class="contato-info reveal delay-1">
                         <h3>Nossa Localização</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> R. Jucá Flávio, 298 - Centro, <br> Brasília de Minas - MG, 39330-000</p>
+                        <p><i class="fas fa-map-marker-alt"></i> R. Jucá Flávio, 298 - Centro,<br>Brasília de Minas - MG, 39330-000</p>
                         <h3>Redes Sociais</h3>
                         <div class="social-links">
-                            <a href="https://www.facebook.com/share/1B28AKMspV/" target="_blank" class="fb"><i class="fab fa-facebook-f"></i>Hospital e Maternidade Nossa Senhora Aparecida</a>
-                            <br>
-                            <a href="https://www.instagram.com/hospnossasenhoraaparecida/" target="_blank" class="ig"><i class="fab fa-instagram"></i>@hospnossasenhoraaparecida</a>
+                            <a href="https://www.facebook.com/share/1B28AKMspV/" target="_blank" rel="noopener" class="social-link">
+                                <i class="fab fa-facebook-f"></i>
+                                <span>Hospital e Maternidade Nossa Senhora Aparecida</span>
+                            </a>
+                            <a href="https://www.instagram.com/hospnossasenhoraaparecida/" target="_blank" rel="noopener" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                                <span>@hospnossasenhoraaparecida</span>
+                            </a>
                         </div>
                     </div>
-                    <div class="map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3820.345291380804!2d-43.88019732392973!3d-16.759488147461163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xab539b44d88ed7%3A0x3487c6fdd04b59c1!2sAv.%20Cora%C3%A7%C3%A3o%20de%20Jesus%2C%201294%20-%20Maj.%20Prates%2C%20Montes%20Claros%20-%20MG%2C%2039403-170!5e0!3m2!1spt-BR!2sbr!4v1758220569416!5m2!1spt-BR!2sbr" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
+                    <div class="map-container reveal delay-2">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3820.345291380804!2d-43.88019732392973!3d-16.759488147461163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xab539b44d88ed7%3A0x3487c6fdd04b59c1!2sAv.%20Cora%C3%A7%C3%A3o%20de%20Jesus%2C%201294%20-%20Maj.%20Prates%2C%20Montes%20Claros%20-%20MG%2C%2039403-170!5e0!3m2!1spt-BR!2sbr!4v1758220569416!5m2!1spt-BR!2sbr"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Mapa de localização do hospital">
                         </iframe>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- FACHADA -->
         <section id="fachada" class="fachada">
             <div class="container">
-                <h2>Nossa Fachada</h2>
-                <p class="section-description">
-                    EM BREVE NOSSA FACHADA.
-                </p>
-                <div class="fachada-media">
-                    <img src="assets/fachada-hospital.jpeg" alt="Fachada do hospital">
+                <h2 class="reveal">Nossa Fachada</h2>
+                <p class="fachada-em-breve reveal delay-1">Em breve</p>
+                <div class="fachada-img reveal delay-2">
+                    <img src="assets/fachada-hospital.jpeg" alt="Projeto da fachada do Hospital e Maternidade Nossa Senhora Aparecida">
                 </div>
             </div>
         </section>
+
     </main>
 
+    <!-- FOOTER -->
     <footer class="footer">
-        <p id="copyright">© 2024 Hospital e Maternidade Nossa Senhora Aparecida. Todos os direitos reservados.</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="assets/logo.svg" alt="Logo Hospital" class="footer-logo">
+                    <p class="footer-tagline">Cuidando com excelência e humanização.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#sobre">Sobre Nós</a></li>
+                        <li><a href="#galeria">Galeria</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Redes Sociais</h4>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/share/1B28AKMspV/" target="_blank" rel="noopener">
+                            <i class="fab fa-facebook-f"></i> Facebook
+                        </a>
+                        <a href="https://www.instagram.com/hospnossasenhoraaparecida/" target="_blank" rel="noopener">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p id="copyright"></p>
+            </div>
+        </div>
     </footer>
+
+    <!-- WHATSAPP FLUTUANTE -->
+    <a href="https://wa.me/553898223481" class="float-wa" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- VOLTAR AO TOPO -->
+    <button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>
