@@ -103,7 +103,7 @@ img { display: block; max-width: 100%; }
 }
 
 .logo {
-  height: 4rem;
+  height: 5.5rem;
   position: relative;
   z-index: 1;
   transition: height .4s ease;
@@ -117,7 +117,7 @@ img { display: block; max-width: 100%; }
   border-bottom-color: rgba(255,255,255,.3);
 }
 
-.header.scrolled .logo { height: 3rem; }
+.header.scrolled .logo { height: 4rem; }
 
 /* Nav desktop */
 .nav {
@@ -256,6 +256,46 @@ img { display: block; max-width: 100%; }
 }
 
 .hero-tag i { color: var(--gold); }
+
+.hero-hospital-name {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 22px;
+  border-left: 3px solid var(--gold);
+  padding-left: 14px;
+}
+
+.reveal-line {
+  overflow: hidden;
+}
+
+.hospital-label {
+  display: block;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.65);
+  animation: slide-from-bar .65s cubic-bezier(.25,.46,.45,.94) both;
+  animation-delay: .15s;
+}
+
+.hospital-full-name {
+  display: block;
+  font-family: 'Yeseva One', cursive;
+  font-size: clamp(1.3rem, 2.8vw, 2rem);
+  color: var(--gold);
+  line-height: 1.15;
+  text-shadow: 0 2px 10px rgba(0,0,0,.3);
+  animation: slide-from-bar .65s cubic-bezier(.25,.46,.45,.94) both;
+  animation-delay: .32s;
+}
+
+@keyframes slide-from-bar {
+  from { transform: translateX(-110%); opacity: 0; }
+  to   { transform: translateX(0);     opacity: 1; }
+}
 
 .hero-content h1 {
   color: var(--white);
@@ -410,6 +450,29 @@ img { display: block; max-width: 100%; }
 
 .card:hover .card-icon             { background: var(--green); }
 .card:hover .card-icon i           { color: var(--white); }
+
+/* Animações individuais por ícone */
+.card:nth-child(1):hover .card-icon i { animation: anim-heartbeat .85s ease-in-out infinite; }
+.card:nth-child(2):hover .card-icon i { animation: anim-float .75s ease-in-out infinite; }
+.card:nth-child(3):hover .card-icon i { animation: anim-swing .55s ease-in-out infinite alternate; }
+
+@keyframes anim-heartbeat {
+  0%,100% { transform: scale(1); }
+  15%     { transform: scale(1.45); }
+  30%     { transform: scale(1); }
+  45%     { transform: scale(1.28); }
+  60%     { transform: scale(1); }
+}
+
+@keyframes anim-float {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-7px); }
+}
+
+@keyframes anim-swing {
+  from { transform: rotate(-15deg); }
+  to   { transform: rotate(15deg); }
+}
 
 .card h3 { color: var(--green); font-size: 1.3rem; margin-bottom: 10px; }
 .card p  { color: var(--muted); font-size: .9rem; line-height: 1.65; }
@@ -608,6 +671,23 @@ img { display: block; max-width: 100%; }
 .servico-item:hover .servico-icon   { background: var(--green); }
 .servico-item:hover .servico-icon i { color: var(--white); }
 
+/* Animações individuais - Serviços */
+.servico-item:nth-child(1):hover .servico-icon i { animation: anim-swing .55s ease-in-out infinite alternate; }
+.servico-item:nth-child(2):hover .servico-icon i { animation: anim-pulse-scale .7s ease-in-out infinite; }
+.servico-item:nth-child(3):hover .servico-icon i { animation: anim-drive .4s ease-in-out infinite; }
+.servico-item:nth-child(4):hover .servico-icon i { animation: anim-float .75s ease-in-out infinite; }
+
+@keyframes anim-pulse-scale {
+  0%,100% { transform: scale(1); }
+  50%     { transform: scale(1.35); }
+}
+
+@keyframes anim-drive {
+  0%,100% { transform: translateX(0); }
+  25%     { transform: translateX(-5px); }
+  75%     { transform: translateX(5px); }
+}
+
 .servico-item h3 { color: var(--green); font-size: 1.15rem; margin-bottom: 10px; }
 .servico-item p  { color: var(--muted); font-size: .88rem; line-height: 1.6; }
 
@@ -760,7 +840,7 @@ img { display: block; max-width: 100%; }
 }
 
 .footer-logo {
-  height: 52px;
+  height: 90px;
   filter: brightness(0) invert(1);
   margin-bottom: 12px;
 }
@@ -921,6 +1001,10 @@ img { display: block; max-width: 100%; }
 }
 
 @media (max-width: 768px) {
+  /* Logo mobile */
+  .logo { height: 4.2rem; }
+  .header.scrolled .logo { height: 3.5rem; }
+
   /* Nav sidebar */
   .hamburger { display: flex; }
 
@@ -983,12 +1067,12 @@ img { display: block; max-width: 100%; }
   .hero p       { display: none; }
   .hero-tag     { font-size: .63rem; padding: 4px 11px; margin-bottom: 12px; }
 
-  .hero-btns { flex-direction: row; gap: 8px; }
+  .hero-btns { flex-direction: column; gap: 10px; }
   .hero-btns .btn {
-    flex: 1;
+    width: 100%;
     justify-content: center;
-    padding: 10px 8px;
-    font-size: .77rem;
+    padding: 13px 16px;
+    font-size: .88rem;
   }
 
   .scroll-cue { display: none; }
@@ -1045,7 +1129,9 @@ img { display: block; max-width: 100%; }
   .hero-tag,
   .hero-content h1,
   .hero-content p,
-  .hero-btns {
+  .hero-btns,
+  .hospital-label,
+  .hospital-full-name {
     animation: none;
     opacity: 1;
     transform: none;
